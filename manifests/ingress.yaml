@@ -1,17 +1,19 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: myapp-ingress
-  annotations:
-    kubernetes.io/ingress.class: azure/application-gateway
+  name: todo-ui-ingress
 spec:
+  ingressClassName: azure-application-gateway
   rules:
-    - http:
-        paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: myapp-service
-              port:
-                number: 80
+  - host: 
+    http: 
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: todo-ui
+            port: 
+              number: 80
+
+             
