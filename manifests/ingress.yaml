@@ -5,8 +5,8 @@ metadata:
 spec:
   ingressClassName: azure-application-gateway
   rules:
-  - host: "*"
-    http:
+  - host: 
+    http: 
       paths:
       - pathType: Prefix
         path: "/"
